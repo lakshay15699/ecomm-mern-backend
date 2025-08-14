@@ -9,6 +9,7 @@ dotenv.config();
 const app = express();
 app.use(cors({ origin: '*' }));
 app.use(express.json());
+app.use('/images', express.static('public/images'));
 
 const mongoUri = process.env.MONGO_URI;
 if (!mongoUri) {
